@@ -6,6 +6,7 @@ const Trip = () => {
   const [name, setName] = useState('');
   const [trips, setTrips] = useState([]);
 
+
   // Función para crear un nuevo viaje
   const createTrip = async () => {
     try {
@@ -40,7 +41,7 @@ const Trip = () => {
       <button onClick={createTrip}>Create New Trip</button>
       {/* Lista de viajes */}
       <ul>
-        {trips.map((trip) => (
+        {trips?.map((trip) => (
           <li key={trip._id}>{trip.name}</li>
         ))}
       </ul>
