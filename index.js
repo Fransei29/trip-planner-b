@@ -23,7 +23,7 @@ MongoClient.connect(url)
 app.use(cors()); 
 app.use(express.json())
 
-app.post("/trip", (req, res) => {
+app.post("/trips", (req, res) => {
     const name = req.body.name
     trips.insertOne({ name: name }, (err, result) => {
       if (err) {
@@ -47,7 +47,7 @@ app.get("/trips", (req, res) => {
       })
 })
 
-app.post("/expense", (req, res) => {
+app.post("/expenses", (req, res) => {
   expenses.insertOne(
   {
     trip: req.body.trip,
