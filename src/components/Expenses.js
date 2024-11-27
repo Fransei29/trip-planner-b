@@ -10,7 +10,7 @@ const Expense = () => {
   // Función para crear un nuevo gasto
   const createExpense = async () => {
     try {
-      await axios.post('http://localhost:3000/expense', {       // Enviar una solicitud POST al servidor para crear un nuevo gasto
+      await axios.post('https://trip-planner-b.vercel.app/api/expenses', {       // Enviar una solicitud POST al servidor para crear un nuevo gasto
         trip,
         amount: parseFloat(amount),
       });
@@ -25,7 +25,7 @@ const Expense = () => {
   // Función para obtener la lista de gastos para un viaje específico
   const fetchExpenses = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/expenses', {       // Enviar una solicitud GET al servidor para obtener todos los gastos del viaje especificado
+      const response = await axios.get('https://trip-planner-b.vercel.app/api/expenses', {       // Enviar una solicitud GET al servidor para obtener todos los gastos del viaje especificado
         params: { trip },
       });
       setExpenses(response.data.expenses);   // Actualizar el estado con la lista de gastos obtenida

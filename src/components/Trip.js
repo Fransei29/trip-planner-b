@@ -9,7 +9,7 @@ const Trip = () => {
   // Función para crear un nuevo viaje
   const createTrip = async () => {
     try {
-      await axios.post('http://localhost:3000/trip', { name }); // Enviar una solicitud POST al servidor para crear un nuevo viaje
+      await axios.post('https://trip-planner-b.vercel.app/api/trips', { name }); // Enviar una solicitud POST al servidor para crear un nuevo viaje
       fetchTrips(); // Volver a obtener la lista de viajes después de crear uno nuevo
       setName(''); 
     } catch (error) {
@@ -20,7 +20,7 @@ const Trip = () => {
   // Función para obtener la lista de viajes
   const fetchTrips = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/trips');  // Enviar una solicitud GET al servidor para obtener todos los viajes
+      const response = await axios.get('https://trip-planner-b.vercel.app/api/trips');  // Enviar una solicitud GET al servidor para obtener todos los viajes
       setTrips(response.data.trips);  // Actualizar el estado con la lista de viajes obtenida
     } catch (error) {
       console.error('Error obteniendo los viajes:', error);
