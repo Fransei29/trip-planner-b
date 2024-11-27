@@ -4,7 +4,8 @@ const cors = require("cors");
 
 const app = express()
 
-const url = "mongodb://localhost:27017"
+const url = 'mongodb+srv://seilerfranco317:Q1Ed2T6trHVqKI0g@tripcost.o6yrq.mongodb.net/?retryWrites=true&w=majority&appName=tripcost'
+
 let db, trips, expenses
 
 // Conexión a MongoDB
