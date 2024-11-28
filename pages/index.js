@@ -5,10 +5,14 @@ import Title from '../src/components/Title';
 
 export default function Home() {
   return (
-    <div className="box">
-      <Title/>
-      <Trip />
-      <Expense />
-    </div>
+    <>
+      <div>
+        <Title/>
+      </div>   
+      <div className="content-container">  
+          <Trip />
+          <Expense />
+      </div>
+    </>
   );
 }

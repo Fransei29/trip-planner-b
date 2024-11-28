@@ -12,7 +12,7 @@ const Trip = () => {
   const createTrip = async () => {
     try {
       setLoading(true);  // Iniciar el estado de carga
-      await axios.post('https://trip-planner-b.vercel.app/api/trips', { name }); // Enviar una solicitud POST al servidor para crear un nuevo viaje
+      await axios.post('/api/trips', { name }); // Enviar una solicitud POST al servidor para crear un nuevo viaje
       fetchTrips(); // Volver a obtener la lista de viajes después de crear uno nuevo
       setName('');  // Limpiar el campo de entrada
       setError('');  // Limpiar cualquier error anterior
@@ -28,7 +28,7 @@ const Trip = () => {
   const fetchTrips = async () => {
     try {
       setLoading(true);  // Iniciar el estado de carga
-      const response = await axios.get('https://trip-planner-b.vercel.app/api/trips');  // Enviar una solicitud GET al servidor para obtener todos los viajes
+      const response = await axios.get('/api/trips');  // Enviar una solicitud GET al servidor para obtener todos los viajes
       setTrips(response.data.trips);  // Actualizar el estado con la lista de viajes obtenida
       setError('');  // Limpiar cualquier error anterior
     } catch (error) {
@@ -45,28 +45,32 @@ const Trip = () => {
   }, []);
 
   return (
-    <div className="box">
-      <h2>Trip</h2>
-      {/* Formulario para crear un nuevo viaje */}
-      <input 
-        type="text" 
-        value={name} 
-        onChange={(e) => setName(e.target.value)} 
-        placeholder="Enter trip name"
-      />
-      <button onClick={createTrip} disabled={loading}>
-        {loading ? 'Creating...' : 'Create New Trip'}
-      </button>
+    <div className="trip-container">
+      <div >
+          <h2>Trip</h2>
+          {/* Formulario para crear un nuevo viaje */}
+          <input 
+            type="text" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            placeholder="Enter trip name"
+          />
+          <button onClick={createTrip} disabled={loading}>
+            {loading ? 'Creating...' : 'Create New Trip'}
+          </button>
 
-      {/* Mostrar errores si hay */}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-
-      {/* Lista de viajes */}
-      <ul>
-        {trips?.map((trip) => (
-          <li key={trip._id}>{trip.name}</li>
-        ))}
-      </ul>
+          {/* Mostrar errores si hay */}
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+      </div>
+      <div>
+          {/* Lista de viajes */}
+          <ul>
+            <h2 className='title-trips'>Your Trips</h2>
+            {trips?.map((trip) => (
+              <li key={trip._id}>{trip.name}</li>
+            ))}
+          </ul>
+      </div>
     </div>
   );
 };

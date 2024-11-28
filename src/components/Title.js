@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Title = ({ title }) => {
+const Title = () => {
     return (
-      <h1 className={title}>Welcome to your Trip Planner</h1>
+    <div className='title'>
+      <h1>Plan Your Dream Trip</h1>
+      <p>Discover new destinations and create unforgettable experiences</p>
+    </div>
     );
   };
 
