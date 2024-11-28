@@ -13,7 +13,6 @@ html, body {
 
 .title { 
   padding-right: 24%;
-  background-color: rgb(72, 4, 95);
   display: flex;
   justify-content: center;
   align-items: center; 
