@@ -6,20 +6,12 @@ html, body {
 }
 
 .container {  
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "title"
-    "root";
+  display: flex;
+  flex-direction: column;
   height: 100vh; 
-  background-color: rgb(86, 17, 110);
 }
 
 .title { 
-  grid-area: title;
   padding-right: 24%;
   background-color: rgb(72, 4, 95);
   display: flex;
@@ -43,16 +35,15 @@ html, body {
 
 .box {
   display: flex;
+  flex-direction: column;
   color: rgb(17, 17, 17);
   font-size: 18px;
-  flex-direction: column;
   align-items: center;
-  padding-right: 33%;
   justify-content: space-around;
 }
 
 h2{
-  margin-bottom: -0.1px;
+  margin-bottom: 0;
 }
 
 input {
