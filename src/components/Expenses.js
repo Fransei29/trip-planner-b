@@ -59,13 +59,13 @@ const Expense = () => {
         />
         <button onClick={createExpense}>New Expense</button>
      </div>
-     <div>
+     <div className="expenses-container-a">
           {/* Lista de gastos */}
           <ul>
           <h2 className='title-expenses'>Your Expenses</h2>
             {expenses.map((expense) => (
               <li key={expense._id}>
-                {expense.amount} - {expense.trip}
+                {expense.trip} ${expense.amount}
               </li>
             ))}
           </ul>

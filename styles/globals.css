@@ -55,7 +55,12 @@ html, body {
     padding-top: 2%;
     padding-bottom: 2%;
     margin-left: -5px;
+}
 
+.expenses-container-a {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
 }
 
 .expenses-container-input{
