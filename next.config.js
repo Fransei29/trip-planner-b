@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-  };
-  
-  module.exports = nextConfig;
-  
+  output: 'export',  // Esta es la nueva opción para exportar estáticamente
+  images: {
+    unoptimized: true, // Si usas next/image, asegúrate de deshabilitar la optimización de imágenes
+  },
+};
+
+module.exports = nextConfig;
